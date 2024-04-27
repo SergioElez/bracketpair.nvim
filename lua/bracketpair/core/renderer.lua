@@ -79,7 +79,7 @@ M.bracket = function()
 	if length_start == 1 then
 		local virtual_text = line_guides[1]
 
-		nsid_opts.virt_text = { { virtual_text, 'BracketUnderline' } }
+		nsid_opts.virt_text = { { virtual_text, '' } }
 		nsid_opts.virt_text_win_col = indent * vim.fn.shiftwidth()
 		vim.api.nvim_buf_set_extmark(0, nsid, positions.start_pos.line - 1, 0, nsid_opts)
 	end
@@ -97,7 +97,7 @@ M.bracket = function()
 
 		local virtual_text = aux_start_line
 
-		nsid_opts.virt_text = { { virtual_text, 'BracketUnderline' } }
+		nsid_opts.virt_text = { { virtual_text, '' } }
 		nsid_opts.virt_text_win_col = offset
 		vim.api.nvim_buf_set_extmark(0, nsid, positions.start_pos.line - 1, 0, nsid_opts)
 	end
@@ -105,7 +105,7 @@ M.bracket = function()
 	if length_end == 1 then
 		local virtual_text = end_line
 
-		nsid_opts.virt_text = { { virtual_text, 'BracketUnderline' } }
+		nsid_opts.virt_text = { { virtual_text, '' } }
 		nsid_opts.virt_text_win_col = indent * vim.fn.shiftwidth()
 		vim.api.nvim_buf_set_extmark(0, nsid, positions.end_pos.line - 1, 0, nsid_opts)
 	end
@@ -113,7 +113,7 @@ M.bracket = function()
 	if length_end >= 2 then
 		local virtual_text = string.sub(end_line, indent * vim.fn.shiftwidth() + 1)
 
-		nsid_opts.virt_text = { { virtual_text, 'BracketUnderline' } }
+		nsid_opts.virt_text = { { virtual_text, '' } }
 		nsid_opts.virt_text_win_col = indent * vim.fn.shiftwidth()
 		vim.api.nvim_buf_set_extmark(0, nsid, positions.end_pos.line - 1, 0, nsid_opts)
 	end
