@@ -4,7 +4,7 @@ local M = {}
 ---Set bracket highlights groups
 M.setup_hl = function()
 	local _, hl = pcall(vim.api.nvim_get_hl, 0, { name = 'MatchParen', link = true })
-	local color = hl.foreground or 'cyan'
+	local color = '#6694EF'
 
 	vim.api.nvim_set_hl(0, 'BracketUnderline', { sp = color, underline = true })
 	vim.api.nvim_set_hl(0, 'BracketLine', { fg = color, underline = false })
